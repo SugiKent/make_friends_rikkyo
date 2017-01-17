@@ -1,6 +1,6 @@
-<ul class="">
+<ul class="list-unstyled">
   <% @users.each do |user| %>
-    <li><%= user.name %>：<%= user.twitter_id %></li>
+    <li><%= user.name %>：<a href="https://twitter.com/<%= user.twitter_id %>">@<%= user.twitter_id %></a></li>
   <% end %>
 </ul>
 
