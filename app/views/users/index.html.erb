@@ -1,0 +1,9 @@
+<ul class="">
+  <% @users.each do |user| %>
+    <li><%= user.name %>：<%= user.twitter_id %></li>
+  <% end %>
+</ul>
+
+<div class="">
+  <%= link_to "登録する！", new_user_path, class: "btn btn-primary" %>
+</div>
