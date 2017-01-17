@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-		@users = User.order("RANDOM()").limit(3)
+		@users = User.published.order("RANDOM()").limit(3)
 	end
 
   def show
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
   private
 
   def user_params
