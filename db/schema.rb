@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20170117085111) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "twitter_id"
-    t.boolean  "published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "published",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
 end
