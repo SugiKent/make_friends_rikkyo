@@ -1,4 +1,4 @@
-class Admin::FacultiesController < ApplicationController
+class Admin::FacultiesController < AdminController
   before_action :set_faculty, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/faculties
