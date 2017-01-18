@@ -19,4 +19,12 @@ $(document).on('change', '#faculty_id', function() {
   //   $('#lessons_select').html(lessondata);
   //   $('#lessons_select').attr('name', 'result[lesson_id]')
   // });
+
+});
+
+$(document).on('change', '.for_hidden', function() {
+  var idValue = $(this).val(),
+      target = $(this).attr("id");
+  console.log(idValue);
+  $('#user_'+target).val(idValue);
 });
