@@ -23,6 +23,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def departments_select
+    if request.xhr?
+      render partial: 'departments', locals: {faculty_id: params[:faculty_id]}
+    end
+  end
+
+
   private
 
   def user_params

@@ -69,6 +69,6 @@ class Admin::DepartmentsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.require(:department).permit(:department_name)
+      params.require(:department).permit(:department_name, :faculty_id)
     end
 end
