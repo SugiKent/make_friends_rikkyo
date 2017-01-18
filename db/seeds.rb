@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# 必ず bundle exec rake db:seed_fuを走らせたあとに
+# 開発環境でUserを大量に作りたい時だけ
+# User生成
+for num in 1..500 do
+  faculty = Faculty.order('RANDOM()').first.id
+  User.create(
+      name: "#{num}aa#{num}太郎",
+      twitter_id: "#{num}twitter#{num}",
+      published: num.even?,
+      faculty_id: faculty,
+      department_id: Department.where(faculty_id: faculty).order('RANDOM()').first.id
+    )
+  p "#{num}aa#{num}太郎"
+end
