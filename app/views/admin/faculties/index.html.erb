@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Faculties</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @faculties.each do |faculty| %>
+      <tr>
+        <td>
+          <%= faculty.faculty_name %>
+        </td>
+        <td><%= link_to 'Edit', edit_admin_faculty_path(faculty), class: "btn btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Faculty', new_admin_faculty_path %>

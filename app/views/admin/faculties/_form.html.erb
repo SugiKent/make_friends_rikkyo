@@ -1,0 +1,22 @@
+<%= form_for @faculty, :url => { :controller => "admin/faculties", :action => :create } do |f| %>
+  <% if @faculty.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@faculty.errors.count, "error") %> prohibited this admin_faculty from being saved:</h2>
+
+      <ul>
+      <% @faculty.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label>学部名</label>
+    <%= f.text_field :faculty_name, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
