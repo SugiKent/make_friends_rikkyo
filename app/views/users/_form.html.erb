@@ -15,6 +15,16 @@
 </div>
 <div class="row">
   <div class="col-md-6 col-xs-12">
+    <%= link_to "利用規約", policies_path , class: "btn btn-default", target: "_new"%>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> 同意しますか？
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-xs-12">
     <%= f.submit class: "btn btn-success" %>
   </div>
 </div>
