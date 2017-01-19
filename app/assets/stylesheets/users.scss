@@ -1,3 +1,84 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common/fonts";
+@import "common/color";
+@import "module/button";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: $black;
+}
+
+.Rikkyo__logo {
+  background-image: url('bg_rikkyo_logo.png');
+  background-size: 400px 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.Wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px auto;
+  background-color: $opacity-black;
+  position: relative;
+  top: 0px;
+}
+
+.User {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  top: 40%;
+  &__twitter {
+    text-align: center;
+    a {
+      font-size: 40px;
+      text-decoration: none;
+      color: $blue;
+      font-family: 'Bungee Shade', cursive;
+      transition: 0.4s;
+      &:hover {
+        border-bottom: 1px solid $blue;
+      }
+    }
+  }
+  &__name {
+    width: 95%;
+    margin: 30px auto;
+    text-align: center;
+    p {
+      font-size: 18px;
+      color: $blue;
+      font-family: 'Bungee Shade', "Meiryo", cursive;
+    }
+  }
+  &__new-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+  }
+}
+
+.Next {
+  width: 250px;
+  margin: auto;
+  position: fixed;
+  bottom: 100px;
+  left: 0px;
+  right: 0px;
+  &__button {
+    text-align: center;
+    color: $white;
+    font-size: 30px;
+    font-family: 'Bungee Shade', "Meiryo", cursive;
+    cursor: pointer;
+  }
+}

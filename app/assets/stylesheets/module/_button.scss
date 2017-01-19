@@ -1,0 +1,20 @@
+@import "common/fonts";
+@import "common/color";
+
+.Button {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid $blue;
+  &__new {
+    color: $white;
+    font-size: 15px;
+    padding: 10px 60px;
+    transition: 0.5s;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
