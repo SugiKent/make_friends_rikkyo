@@ -1,3 +1,46 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common/fonts";
+@import "common/color";
+@import "module/button";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.Wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  margin: 0px auto;
+  background-color: $opacity-black;
+}
+
+.User {
+  width: 95%;
+  margin: auto;
+  &__twitter {
+    text-align: center;
+    a {
+      font-size: 40px;
+      text-decoration: none;
+      color: $blue;
+      font-family: 'Bungee Shade', cursive;
+    }
+  }
+  &__name {
+    width: 95%;
+    margin: 50px auto;
+    text-align: center;
+    p {
+      font-size: 18px;
+      color: $blue;
+      font-family: 'Bungee Shade', "Meiryo", cursive;
+    }
+  }
+  &__button {
+    text-align: center;
+  }
+}
