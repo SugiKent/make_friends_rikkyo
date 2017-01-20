@@ -13,6 +13,10 @@
   color: $white;
   font-family: $apple;
 }
+html {
+  overflow: auto;
+  height: 100%;
+}
 body {
   background-color: $black;
 }
@@ -23,10 +27,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow: hidden;
 }
 .Wrapper {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   overflow: hidden;
   margin: 0px auto;
   background-color: $opacity-black;
@@ -36,10 +41,11 @@ body {
 
 .User {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   margin: auto;
   position: relative;
   top: 40%;
+  overflow: hidden;
   &__twitter {
     text-align: center;
     span {
@@ -56,6 +62,10 @@ body {
       &:hover {
         border-bottom: 1px solid $blue;
       }
+      @include max-screen($breakpoint-mobile) {
+        width: 100%;
+        font-size: 25px;
+      }
     }
   }
   &__name {
@@ -66,6 +76,9 @@ body {
       font-size: 18px;
       color: $blue;
       font-family: 'Orbitron', cursive;
+      @include max-screen($breakpoint-mobile) {
+        font-size: 14px;
+      }
     }
   }
   &__new-button {
@@ -105,4 +118,9 @@ body {
       }
     }
   }
+}
+
+
+.clickCancel {
+  pointer-events : none;
 }
