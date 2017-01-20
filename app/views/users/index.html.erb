@@ -3,7 +3,7 @@
     <% @users.each do |user| %>
       <div class="User">
         <div class="User__twitter">
-          <h2><a href="https://twitter.com/<%= user.twitter_id %>">@<%= user.twitter_id %></a></h2>
+          <h2><a href="https://twitter.com/<%= user.twitter_id %>" target="_blank"><span>@</span><%= user.twitter_id %></a></h2>
         </div>
         <div class="User__name">
           <p>
