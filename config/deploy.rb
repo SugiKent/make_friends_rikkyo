@@ -13,10 +13,6 @@ set :branch, 'master'
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/halcala'
 
-set :ssh_options, {
-   config: false
-}
-
 # シンボリックリンクをはるファイル。(※後述)
 set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 
