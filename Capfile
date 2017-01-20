@@ -4,6 +4,8 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+require "capistrano/scm/git"
+Capistrano::SCM::Git.new(hooks: false)
 
 # require 'capistrano3/unicorn'
 # require 'capistrano/rvm'
