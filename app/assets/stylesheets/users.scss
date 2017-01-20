@@ -3,12 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "common/fonts";
 @import "common/color";
+@import "common/media_queries";
 @import "module/button";
+@import "module/form";
 
 * {
   margin: 0px;
   padding: 0px;
   color: $white;
+  font-family: $apple;
 }
 body {
   background-color: $black;
@@ -39,11 +42,16 @@ body {
   top: 40%;
   &__twitter {
     text-align: center;
+    span {
+      color: $orange;
+      font-family: 'Orbitron', cursive;
+      margin-right: 10px;
+    }
     a {
       font-size: 40px;
       text-decoration: none;
       color: $blue;
-      font-family: 'Bungee Shade', cursive;
+      font-family: 'Orbitron', cursive;
       transition: 0.4s;
       &:hover {
         border-bottom: 1px solid $blue;
@@ -57,7 +65,7 @@ body {
     p {
       font-size: 18px;
       color: $blue;
-      font-family: 'Bungee Shade', "Meiryo", cursive;
+      font-family: 'Orbitron', cursive;
     }
   }
   &__new-button {
@@ -69,17 +77,32 @@ body {
 }
 
 .Next {
-  width: 250px;
+  width: 8em;
   margin: auto;
   position: fixed;
   bottom: 100px;
   left: 0px;
   right: 0px;
+  text-align: center;
   &__button {
     text-align: center;
     color: $white;
     font-size: 30px;
-    font-family: 'Bungee Shade', "Meiryo", cursive;
+    font-family: 'Orbitron', cursive;
     cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: $blue;
+    }
+    &--back {
+      font-size: 15px;
+      @include max-screen($breakpoint-mobile) {
+        position: fixed;
+        bottom: 50px;
+        text-align: center;
+        right: 0px;
+        left: 0px;
+      }
+    }
   }
 }
