@@ -17,6 +17,9 @@ gem 'seed-fu'
 
 gem 'pry'
 
+
+gem 'google-analytics-rails'
+
 # bootstrap
 gem 'therubyracer', platforms: :ruby
 gem 'less-rails'
