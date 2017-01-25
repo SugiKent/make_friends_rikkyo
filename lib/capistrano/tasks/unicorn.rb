@@ -19,8 +19,8 @@ namespace :unicorn do
 
 #unicornを再起動するメソッド
   def reload_unicorn
-    kill -QUIT `cat /var/www/halcala/shared/tmp/pids/unicorn.pid`
-    bundle exec unicorn -c /var/www/halcala/current/config/unicorn/production.rb -E production -D
+    "kill -QUIT `cat /var/www/halcala/shared/tmp/pids/unicorn.pid`"
+    "bundle exec unicorn -c /var/www/halcala/current/config/unicorn/production.rb -E production -D"
   end
 
 #unicronを強制終了するメソッド
