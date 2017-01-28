@@ -9,7 +9,7 @@
     <%= render partial: 'departments', locals: {faculty_id: Faculty.first.id} %>
   </div>
   <p class="Form__hidden">
-    <%= department_name = Department.find(@user.department_id).department_name %>
+    <%= department_name = Department.find(@user.department_id).department_name if @user.department_id.present? %>
   </p>
 
   <%= f.hidden_field :faculty_id %>
