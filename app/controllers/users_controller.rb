@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate, only: :index
+  before_action :check_user, only: :edit
   before_action :set_user, only: [:edit, :update]
 
   def index
@@ -7,21 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to users_path, notice: 'user was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
-    end
   end
 
   def edit
@@ -48,6 +35,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def check_user
+    binding.pry
+    if "#{current_user.id}" == params[:id]
+    else
+      redirect_to user_path
+    end
+  end
 
   def set_user
     @user = User.find(params[:id])
