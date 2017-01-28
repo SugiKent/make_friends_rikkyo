@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-	root 'users#index'
-
+  root 'home#top'
 	get 'auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-	resources :users do
+	resources :users, except: [:new, :create] do
 		collection do
 			get :departments_select
 			get :thanks

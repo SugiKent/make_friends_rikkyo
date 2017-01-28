@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to edit_user_path(user)
     else
-      session[:user_id] = User.find_by(uid: request.env['omniauth.auth']["uid"])
-      redirect_to root_path
+      session[:user_id] = User.find_by(uid: request.env['omniauth.auth']["uid"]).id
+      redirect_to users_path
     end
 
   end

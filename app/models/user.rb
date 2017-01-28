@@ -15,4 +15,5 @@ class User < ActiveRecord::Base
       user.nickname = nickname
     end
   end
+
 end
