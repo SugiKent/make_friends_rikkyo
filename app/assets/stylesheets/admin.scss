@@ -1,0 +1,22 @@
+@import "common/fonts";
+@import "common/color";
+@import "common/media_queries";
+@import "module/button";
+@import "module/form";
+
+.Admin {
+  &__header {
+    background-color: $white;
+    color: $black;
+    height: 80px;
+  }
+  &__wrapper {
+    background-color: $white;
+  }
+  &__table th, &__table td {
+    color: $black;
+  }
+  &__text-black {
+    color: $black;
+  }
+}

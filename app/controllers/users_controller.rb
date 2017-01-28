@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-		@users = User.published.order("RANDOM()").limit(3)
+		@users = User.published.order("RAND()").limit(50)
 	end
 
   def show
