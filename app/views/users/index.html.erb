@@ -1,21 +1,25 @@
 <div class="Rikkyo__logo">
   <div class="Wrapper">
-    <% @users.each do |user| %>
+    <!-- <#% @users.each do |user| %>
       <div class="User">
         <div class="User__twitter">
-          <h2><a href="https://twitter.com/<%= user.twitter_id %>" target="_blank"><span>@</span><%= user.twitter_id %></a></h2>
+          <h2><a href="https://twitter.com/<#%= user.twitter_id %>" target="_blank"><span>@</span><#%= user.twitter_id %></a></h2>
         </div>
         <div class="User__name">
           <p>
-            <%= user.name %> / <%= Department.find(user.department_id).department_name %>
+            <#%= user.name %> / <#%= Department.find(user.department_id).department_name %>
           </p>
         </div>
       </div>
-    <% end %>
+    <#% end %> -->
 
 
     <div class="User__new-button">
-      <%= link_to "ENTRY", new_user_path, class: "Button Button__new" %>
+      <% if logged_in? %>
+        <%= link_to 'LOG OUT', logout_path, class: "Button Button__new" %>
+      <% else %>
+        <%= link_to "ENTRY", 'auth/twitter', class: "Button Button__new" %>
+      <% end %>
     </div>
   </div>
 </div>

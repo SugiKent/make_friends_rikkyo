@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
-  validates :name, :twitter_id, :faculty_id, :department_id, presence: true
-  validates :twitter_id, uniqueness: true
+  def self.find_or_create_from_auth(auth)
+  provider = auth[:provider]
+  uid = auth[:uid]
+  nickname = auth[:info][:nickname]
 
-
-  scope :published, -> { where(published: true)   }
-  scope :unpublished, -> { where(published: false)   }
+    self.find_or_create_by(provider: provider, uid: uid) do |user|
+      user.nickname = nickname
+    end
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118055720) do
+ActiveRecord::Schema.define(version: 20170128060519) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "department_name", limit: 255
@@ -29,19 +29,12 @@ ActiveRecord::Schema.define(version: 20170118055720) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.string   "twitter_id",    limit: 255
-    t.boolean  "published",                 default: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.integer  "department_id", limit: 4
-    t.integer  "faculty_id",    limit: 4
+    t.string   "provider",   limit: 255
+    t.string   "uid",        limit: 255
+    t.string   "nickname",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree
-  add_index "users", ["faculty_id"], name: "index_users_on_faculty_id", using: :btree
-
   add_foreign_key "departments", "faculties"
-  add_foreign_key "users", "departments"
-  add_foreign_key "users", "faculties"
 end
