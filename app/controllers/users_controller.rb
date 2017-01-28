@@ -8,7 +8,11 @@ class UsersController < ApplicationController
 	end
 
   def show
-    @user = User.find(params[:id])
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+    else
+      redirect_to users_path
+    end
   end
 
   def edit
@@ -37,10 +41,9 @@ class UsersController < ApplicationController
   private
 
   def check_user
-    binding.pry
     if "#{current_user.id}" == params[:id]
     else
-      redirect_to user_path
+      redirect_to users_path
     end
   end
 
