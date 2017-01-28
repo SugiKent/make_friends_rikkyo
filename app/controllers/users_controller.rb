@@ -29,6 +29,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def thanks
+    @users_count = User.unpublished.count
+  end
 
   private
 

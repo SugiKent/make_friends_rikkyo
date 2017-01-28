@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
 	resources :users, :except => [:destroy, :update, :edit] do
 		collection do
-			get :departments_selects
-			get '/thankyou' => 'thankyou#index'
+			get :departments_select
+			get :thanks
 		end
 	end
 
