@@ -17,6 +17,7 @@ gem 'seed-fu'
 
 gem 'pry'
 
+gem 'meta-tags'
 
 gem 'google-analytics-rails'
 
