@@ -2,12 +2,16 @@
 <div class="Form">
   <div class="Form__group">
     <%= label_tag :name, 'Faculty', class: "Form__label" %>
-    <%= f.select_tag('faculty_id', options_from_collection_for_select(Faculty.all, :id, :faculty_name, {selected: params[:faculty_id]}), prompt: "No Selected", class: "Form__select-box Form__item for_hidden") %>
+    <%= f.select_tag('faculty_id', options_from_collection_for_select(Faculty.all, :id, :faculty_name, {selected: @user.faculty_id}), prompt: "No Selected", class: "Form__select-box Form__item for_hidden") %>
   </div>
   <div class="Form__group">
     <label class="Form__label">Department</label>
     <%= render partial: 'departments', locals: {faculty_id: Faculty.first.id} %>
   </div>
+  <p class="Form__hidden">
+    <%= department_name = Department.find(@user.department_id).department_name %>
+  </p>
+
   <%= f.hidden_field :faculty_id %>
   <%= f.hidden_field :department_id %>
   <div class="Form__group">

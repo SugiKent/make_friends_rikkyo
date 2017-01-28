@@ -65,6 +65,9 @@
     margin: 15px auto;
     text-align: center;
   }
+  &__hidden {
+    display: none;
+  }
 }
 .field_with_errors {
   display: inline-block;
