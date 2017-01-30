@@ -3,3 +3,9 @@
     <%= render 'form'%>
   </div>
 </div>
+<div>
+  <% if  current_user.completed %>
+    <%= link_to "削除", user_path, method: :delete %>
+  <% else %>
+  <% end %>
+</div>
