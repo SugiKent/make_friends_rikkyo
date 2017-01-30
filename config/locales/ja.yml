@@ -1,4 +1,9 @@
 ja:
+  attributes:
+    user:
+      want_friends:
+        true: "募集中"
+        false: "募集していない"
   user:
     sex:
       male: 男性
