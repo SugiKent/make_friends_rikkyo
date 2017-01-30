@@ -3,10 +3,11 @@
     <li><%= link_to "ユーザー一覧", admin_users_path, class: "" %></li>
     <li><%= link_to "学部一覧", admin_faculties_path, class: "" %></li>
     <li><%= link_to "学科一覧", admin_departments_path, class: "" %></li>
+    <li><%= link_to "サークル一覧", admin_circles_path, class: "" %></li>
     <li><%= link_to "ユーザー側画面", users_path, class: "" %></li>
   </ul>
 
-  <ul class="nav nav-tabs hidden-sm">
+  <ul class="nav nav-tabs hidden-sm hidden-md hidden-lg">
     <li role="presentation" class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
         メニュー <span class="caret"></span>
@@ -15,6 +16,7 @@
         <li><%= link_to "ユーザー一覧", admin_users_path, class: "" %></li>
         <li><%= link_to "学部一覧", admin_faculties_path, class: "" %></li>
         <li><%= link_to "学科一覧", admin_departments_path, class: "" %></li>
+        <li><%= link_to "サークル一覧", admin_circles_path, class: "" %></li>
         <li><%= link_to "ユーザー側画面", users_path, class: "" %></li>
       </ul>
     </li>
