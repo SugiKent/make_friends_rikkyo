@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
   def index
-		# @users = User.published.order("RAND()").limit(50)
+    @departments = Department.all
+		@users = User.completed.published.order("RAND()").limit(50)
 	end
 
   def show

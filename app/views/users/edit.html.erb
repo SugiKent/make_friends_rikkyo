@@ -1,5 +1,11 @@
 <div class="Rikkyo__logo">
   <div class="Wrapper">
     <%= render 'form'%>
+    <div class="Next">
+      <%= link_to "BACK", users_path, class: "Next__button Next__button--back" %>
+    </div>
+    <div class="Next">
+      <%= link_to "LOGOUT", logout_path, class: "Next__button Next__button--logout" %>
+    </div>
   </div>
 </div>
