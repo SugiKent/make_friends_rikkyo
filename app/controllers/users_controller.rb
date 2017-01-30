@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate, only: :index
-  before_action :check_user, only: :edit
-  before_action :set_user, only: [:edit, :update]
+  before_action :check_user, only: [:edit, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
 		# @users = User.published.order("RAND()").limit(50)
@@ -25,6 +25,14 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       redirect_to edit_user_path(@user)
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      redirect_to root_path
+    else
+      redirect_to user_path
     end
   end
 
