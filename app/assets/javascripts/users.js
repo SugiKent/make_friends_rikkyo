@@ -39,6 +39,25 @@ function scrollUserWindow() {
   }, 1000).animate('top', "40%");
 }
 
+function showCheckGroup(elem) {
+  $('.Check__label').removeClass('clickCancel');
+  $(elem).addClass('clickCancel');
+  $('.Check__group').animate({
+    height: "hide",
+    opacity: 0
+  }, {
+    duration: 500,
+    queue: false
+  });
+  $(elem).next().animate({
+    height: "show",
+    opacity: 1
+  }, {
+    duration: 500,
+    queue: false
+  });
+}
+
 
 
 $(function(){
@@ -54,15 +73,19 @@ $(function(){
     // }, 1500);
   });
 
-  var timer = false;
-  $(window).on("load resize", function(){
-    if (timer !== false) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(function() {
-      setUserHeight();
-    }, 200);
+  $('.Check__label').on('click', function(){
+    showCheckGroup(this);
   });
-  setUserHeight();
+
+  // var timer = false;
+  // $(window).on("load resize", function(){
+  //   if (timer !== false) {
+  //     clearTimeout(timer);
+  //   }
+  //   timer = setTimeout(function() {
+  //     setUserHeight();
+  //   }, 200);
+  // });
+  // setUserHeight();
 
 });

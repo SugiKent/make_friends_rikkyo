@@ -28,22 +28,26 @@
 
 
   <div class="Form__group">
-    <label class="Form__label">興味のあるサークル</label>
-    <p class="Check__label">
-      スポート系▼
-    </p>
-    <div class="Check__group">
-      <%= collection_check_boxes(:user, :circle_ids, Circle.where(category: 0), :id, :name) do |b| %>
-        <%= b.label { b.check_box + b.text } %>
-      <% end %>
+    <label class="Form__label Form__label--wide">興味のあるサークル</label>
+    <div class="Check">
+      <p class="Check__label">
+        Sport
+      </p>
+      <div class="Check__group">
+        <%= collection_check_boxes(:user, :circle_ids, Circle.where(category: 0), :id, :name) do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+        <% end %>
+      </div>
     </div>
-    <p class="Check__label">
-      文化系▼
-    </p>
-    <div class="Check__group">
-      <%= collection_check_boxes(:user, :circle_ids, Circle.where(category: 1), :id, :name) do |b| %>
-        <%= b.label { b.check_box + b.text } %>
-      <% end %>
+    <div class="Check">
+      <p class="Check__label">
+        Culture
+      </p>
+      <div class="Check__group">
+        <%= collection_check_boxes(:user, :circle_ids, Circle.where(category: 1), :id, :name) do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -52,7 +56,7 @@
 
 
 <div class="Form__submit">
-  <%= f.submit class: "Button Button__submit" %>
+  <%= f.submit "SAVE", class: "Button Button__submit" %>
 </div>
 <% end %>
 

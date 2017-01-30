@@ -33,6 +33,9 @@
       text-align: left;
       font-size: 15px;
     }
+    &--wide {
+      width: 90%;
+    }
   }
   &__select-box {
     width: 280px;
@@ -73,5 +76,43 @@
   display: inline-block;
   .Form__text-box {
     border: 1px soild $orange;
+  }
+}
+
+.Check {
+  width: 100%;
+  margin: auto;
+  border: 1px solid $white;
+  padding: 4px;
+  &__label {
+    cursor: pointer;
+    text-align: right;
+    width: 40%;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: lighter;
+    letter-spacing: 0.2em;
+    position: relative;
+    top: -2px;
+    font-family: 'Orbitron', cursive;
+    @include max-screen($breakpoint-mobile) {
+      width: 90%;
+      margin: 15px auto 5px;
+      text-align: left;
+      font-size: 15px;
+    }
+  }
+  &__group {
+    width: 60%;
+    margin: 15px 0px 15px 40%;
+    display: none;
+    opacity: 0;
+    @include max-screen($breakpoint-mobile) {
+      width: 90%;
+      margin: 15px auto;
+    }
+  }
+  & label {
+    padding: 5px 3px;
   }
 }
