@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+
+  has_many :user_circles
+  has_many :circles, through: :user_circles
+
+
   validates :faculty_id, :department_id, :nickname, :name, presence: true, on: :update
   scope :completed, -> { where(completed: true) }
   scope :uncompleted, -> { where(completed: false) }
