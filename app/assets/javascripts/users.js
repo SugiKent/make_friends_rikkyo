@@ -77,6 +77,8 @@ $(function(){
     showCheckGroup(this);
   });
 
+  showCheckGroup($('.Check__label:first'));
+
   // var timer = false;
   // $(window).on("load resize", function(){
   //   if (timer !== false) {
