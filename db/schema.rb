@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130131959) do
+ActiveRecord::Schema.define(version: 20170130134558) do
 
   create_table "circles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170130131959) do
     t.boolean  "completed",                 default: false, null: false
     t.boolean  "published",                 default: true,  null: false
     t.integer  "sex",           limit: 1,   default: 2,     null: false
+    t.boolean  "want_friends",              default: false, null: false
   end
 
   add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree

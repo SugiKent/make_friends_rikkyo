@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :nickname, :department_id, :faculty_id, {:circle_ids => []})
+    params.require(:user).permit(:name, :nickname, :department_id, :faculty_id, :sex, :want_friends, {:circle_ids => []})
   end
 
 end
