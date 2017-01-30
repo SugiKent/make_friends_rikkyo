@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :user_circles
   has_many :circles, through: :user_circles
 
+  enum sex: {male: 0, female: 1, other: 2}
 
   validates :faculty_id, :department_id, :nickname, :name, presence: true, on: :update
   scope :completed, -> { where(completed: true) }
@@ -18,6 +19,14 @@ class User < ActiveRecord::Base
 
     self.find_or_create_by(provider: provider, uid: uid) do |user|
       user.nickname = nickname
+    end
+  end
+
+  class << self
+    def localed_statuses
+      sexes.keys.map do |s|
+        [ApplicationController.helpers.t("user.sex.#{s}"), s]
+      end
     end
   end
 
