@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate, only: :index
-  before_action :check_user, only: :edit
-  before_action :set_user, only: [:edit, :update]
+  before_action :check_user, only: [:edit, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @departments = Department.all
@@ -29,6 +29,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      redirect_to root_path
+    else
+      redirect_to user_path
+    end
+  end
+
   def departments_select
     if request.xhr?
       render partial: 'departments', locals: {faculty_id: params[:faculty_id]}
@@ -53,7 +61,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :nickname, :department_id, :faculty_id, {:circle_ids => []})
+    params.require(:user).permit(:name, :nickname, :department_id, :faculty_id, :sex, :want_friends, {:circle_ids => []})
   end
 
 end
