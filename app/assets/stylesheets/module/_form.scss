@@ -35,6 +35,9 @@
     }
     &--wide {
       width: 40%;
+      @include max-screen($breakpoint-mobile) {
+        width: 90%;
+      }
     }
   }
   &__select-box {
@@ -71,6 +74,22 @@
   &__hidden {
     display: none;
   }
+  &__line {
+    width: 90%;
+    margin: 30px auto;
+    border-top: 1px solid $blue;
+    @include max-screen($breakpoint-mobile) {
+      width: 100%;
+    }
+    p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      @include max-screen($breakpoint-mobile) {
+        font-size: 12px;
+      }
+    }
+  }
 }
 .field_with_errors {
   display: inline-block;
@@ -84,6 +103,7 @@
   margin: auto;
   padding: 4px;
   &__label {
+    color: $blue;
     cursor: pointer;
     text-align: right;
     width: 40%;
