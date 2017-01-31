@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>【admin】MakeFriendsRikkyo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<style>
+  * {
+    color: black;
+    background-color: #fff;
+  }
+  body {
+    background-color: #fff;
+  }
+</style>
+<body>
+  <%= render 'admin/shared/header' %>
+<div class="Admin__wrapper container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

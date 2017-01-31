@@ -11,14 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117085111) do
+ActiveRecord::Schema.define(version: 20170130134558) do
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "twitter_id"
-    t.boolean  "published",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+  create_table "circles", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.integer  "category",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
+  create_table "departments", force: :cascade do |t|
+    t.string   "department_name", limit: 255
+    t.integer  "faculty_id",      limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "departments", ["faculty_id"], name: "index_departments_on_faculty_id", using: :btree
+
+  create_table "faculties", force: :cascade do |t|
+    t.string   "faculty_name", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "user_circles", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "circle_id",  limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "user_circles", ["circle_id"], name: "index_user_circles_on_circle_id", using: :btree
+  add_index "user_circles", ["user_id"], name: "index_user_circles_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "provider",      limit: 255
+    t.string   "uid",           limit: 255
+    t.string   "nickname",      limit: 255
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "faculty_id",    limit: 4
+    t.integer  "department_id", limit: 4
+    t.string   "name",          limit: 255
+    t.boolean  "completed",                 default: false, null: false
+    t.boolean  "published",                 default: true,  null: false
+    t.integer  "sex",           limit: 1,   default: 2,     null: false
+    t.boolean  "want_friends",              default: false, null: false
+  end
+
+  add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree
+  add_index "users", ["faculty_id"], name: "index_users_on_faculty_id", using: :btree
+
+  add_foreign_key "departments", "faculties"
+  add_foreign_key "user_circles", "circles"
+  add_foreign_key "user_circles", "users"
+  add_foreign_key "users", "departments"
+  add_foreign_key "users", "faculties"
 end

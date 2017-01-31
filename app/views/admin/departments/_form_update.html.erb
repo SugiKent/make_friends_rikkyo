@@ -1,0 +1,35 @@
+<%= form_for @department, :url => { :controller => "admin/departments", :action => :update } do |f| %>
+  <% if @department.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@department.errors.count, "error") %> prohibited this admin_department from being saved:</h2>
+
+      <ul>
+      <% @department.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.collection_select(
+          :faculty_id,
+          Faculty.all,
+          :id,
+          :faculty_name,
+          { include_blank: "Please select one" },
+          { class: "form-control" }
+    ) %>
+  </div>
+
+  <div class="form-group">
+    <label>学部名</label>
+    <%= f.text_field :department_name, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<td><%= link_to 'Destroy', admin_department_path(@department), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>

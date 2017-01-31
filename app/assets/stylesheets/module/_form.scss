@@ -1,0 +1,141 @@
+@import "common/fonts";
+@import "common/color";
+@import "common/media_queries";
+
+.Form {
+  width: 90%;
+  margin: auto;
+  padding-top: 100px;
+  @include max-screen($breakpoint-mobile) {
+    padding-top: 15px;
+  }
+  &__group {
+    width: 100%;
+    margin: 8px auto;
+  }
+  &__item {
+    background-color: rgba(0,0,0,0);
+    &:active, &:focus {
+      border: none;
+      outline: 1px solid $blue;
+    }
+  }
+  &__label {
+    text-align: right;
+    width: 40%;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: lighter;
+    letter-spacing: 0.2em;
+    font-family: 'Orbitron', cursive;
+    @include max-screen($breakpoint-mobile) {
+      margin: 15px auto 5px;
+      text-align: left;
+      font-size: 15px;
+    }
+    &--wide {
+      width: 40%;
+      @include max-screen($breakpoint-mobile) {
+        width: 90%;
+      }
+    }
+  }
+  &__select-box {
+    width: 280px;
+    height: 60px;
+    // line-height: 15px;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    border-radius: 0px;
+    font-family: 'Orbitron', cursive;
+    @include max-screen($breakpoint-mobile) {
+      width: 100%;
+      height: 40px;
+      font-size: 12px;
+      padding-left: 10px;
+    }
+  }
+  &__text-box {
+    width: 280px;
+    height: 45px;
+    padding: 0px 10px;
+    border: 0.5px solid $white;
+    border-radius: 0px;
+    @include max-screen($breakpoint-mobile) {
+      width: 100%;
+      height: 40px;
+      font-size: 12px;
+    }
+  }
+  &__submit {
+    margin: 15px auto;
+    text-align: center;
+  }
+  &__hidden {
+    display: none;
+  }
+  &__line {
+    width: 90%;
+    margin: 30px auto;
+    border-top: 1px solid $blue;
+    @include max-screen($breakpoint-mobile) {
+      width: 100%;
+    }
+    p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      @include max-screen($breakpoint-mobile) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+.field_with_errors {
+  display: inline-block;
+  .Form__text-box {
+    border: 1px soild $orange;
+  }
+}
+
+.Check {
+  width: 100%;
+  margin: auto;
+  padding: 4px;
+  &__label {
+    color: $blue;
+    cursor: pointer;
+    text-align: right;
+    width: 40%;
+    margin: 5px;
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 0.2em;
+    position: relative;
+    top: -2px;
+    font-family: 'Orbitron', cursive;
+    @include max-screen($breakpoint-mobile) {
+      width: 90%;
+      margin: 15px auto 5px;
+      text-align: left;
+      font-size: 15px;
+    }
+  }
+  &__group {
+    width: 60%;
+    margin: 5px 0px 5px 40%;
+    display: none;
+    opacity: 0;
+    @include max-screen($breakpoint-mobile) {
+      width: 90%;
+      margin: 5px auto;
+    }
+  }
+  & label {
+    padding: 5px 3px;
+    letter-spacing: 0.1em;
+    & input {
+      margin-right: 5px;
+    }
+  }
+}

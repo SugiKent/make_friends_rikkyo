@@ -1,0 +1,35 @@
+@import "common/fonts";
+@import "common/color";
+
+.Button {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid $blue;
+  &__new {
+    color: $white;
+    font-size: 15px;
+    padding: 10px 60px;
+    transition: 0.5s;
+    text-decoration: none;
+    font-family: 'Orbitron', cursive;
+    &:hover {
+      text-decoration: none;
+      background-color: $white;
+      color: $black;
+    }
+  }
+  &__submit {
+    color: $white;
+    font-size: 15px;
+    padding: 0px 60px;
+    transition: 0.5s;
+    text-decoration: none;
+    font-family: 'Orbitron', cursive;
+    background-color: rgba(0,0,0,0);
+    &:hover {
+      text-decoration: none;
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
