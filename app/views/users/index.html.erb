@@ -3,7 +3,13 @@
     <% @users.each do |user| %>
       <div class="User">
         <div class="User__twitter">
-          <h2><%= link_to user.name, user_path(user) %></h2>
+          <% if user.sex == "male" %>
+            <h2><%= link_to user.name, user_path(user), class: "User__twitter--male" %></h2>
+          <% elsif user.sex == "female" %>
+            <h2><%= link_to user.name, user_path(user), class: "User__twitter--female" %></h2>
+          <% else %>
+            <h2><%= link_to user.name, user_path(user) %></h2>
+          <% end %>
         </div>
         <div class="User__name">
           <p>
