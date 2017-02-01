@@ -17,13 +17,13 @@
       </p>
       <p class="Profile__item">
         <a href="https://twitter.com/<%= @user.nickname %>" class="Profile__item--twitter" target="_blank">
-          <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>　<%= @user.nickname %>
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          Twitterを開く
         </a>
       </p>
 
-      <p class="Profile__item">
-        <%= Faculty.find(@user.faculty_id).faculty_name %>
-        <br><%= Department.find(@user.department_id).department_name %>
+      <p class="Profile__item Profile__item--belong">
+        <%= Faculty.find(@user.faculty_id).faculty_name %> / <%= Department.find(@user.department_id).department_name %>
       </p>
 
       <div class="Profile__block">
