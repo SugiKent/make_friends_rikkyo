@@ -1,1 +1,58 @@
-showでしょう
+<div class="Rikkyo__logo">
+  <div class="Wrapper">
+
+    <div class="Profile">
+      <p class="Profile__item">
+        <% if @user.sex == "male" %>
+          <p class="Profile__item--male">
+            <i class="fa fa-male fa-2x" aria-hidden="true"></i>　<%= @user.name %>
+          </p>
+        <% elsif @user.sex == "female" %>
+          <p class="Profile__item--female">
+            <i class="fa fa-female fa-2x" aria-hidden="true"></i>　<%= @user.name %>
+          </p>
+        <% else %>
+          <i class="fa fa-user fa-2x" aria-hidden="true"></i>　<%= @user.name %>
+        <% end %>
+      </p>
+      <p class="Profile__item">
+        <a href="https://twitter.com/<%= @user.nickname %>" class="Profile__item--twitter" target="_blank">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          Twitterを開く
+        </a>
+      </p>
+
+      <p class="Profile__item Profile__item--belong">
+        <%= Faculty.find(@user.faculty_id).faculty_name %> / <%= Department.find(@user.department_id).department_name %>
+      </p>
+
+      <div class="Profile__block">
+        <p class="Profile__title">
+          <i class="fa fa-futbol-o" aria-hidden="true"></i> 興味のあるサークル
+        </p>
+        <p>
+          <% @user.circles.each do |circle| %>
+            <%= circle.name %>　
+          <% end %>
+        </p>
+      </div>
+      <div class="Profile__block">
+        <p class="Profile__title">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i> 入学式仲間
+        </p>
+        <% if @user.want_friends == true %>
+          <p>
+            募集中
+          </p>
+        <% else %>
+          <p>
+            募集していません
+          </p>
+        <% end %>
+      </div>
+      <div class="Next">
+        <%= link_to "BACK", users_path, class: "Next__button Next__button--back" %>
+      </div>
+    </div>
+  </div>
+</div>

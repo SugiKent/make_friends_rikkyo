@@ -1,0 +1,69 @@
+@import "common/fonts";
+@import "common/color";
+@import "common/media_queries";
+@import "module/button";
+@import "module/form";
+
+.Rikkyo__background {
+  width: 100%;
+  height: 100vh;
+  background-image: image-url('bg_rikkyo_build.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.Top {
+  width: 100%;
+  position: relative;
+  top: 100px;
+  padding-left: 150px;
+  @include max-screen($breakpoint-mobile) {
+    padding-left: 10px;
+  }
+  &__twitter {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    a {
+      color: $blue;
+      line-height: 30px;
+      vertical-align: top;
+      i {
+        color: $blue;
+      }
+    }
+  }
+  &__title {
+    display:inline;
+    font-size: 30px;
+    color: $orange;
+  }
+  &__subtitle {
+    font-size: 18px;
+    color: $blue;
+    line-height: 25px;
+  }
+  &__entry {
+    width: 90%;
+    margin: 200px 0px 0px;
+    @include max-screen($breakpoint-mobile) {
+      width: 90%;
+      margin: 150px auto 0px;
+      text-align: center;
+    }
+  }
+  &__notice {
+    font-size: 10px;
+    text-align: left;
+    @include max-screen($breakpoint-mobile) {
+      text-align: center;
+    }
+  }
+  &__description {
+    margin: 20px auto;
+    font-size: 14px;
+    line-height: 30px;
+  }
+}

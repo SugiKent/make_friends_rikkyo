@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :user_circles
-  has_many :circles, through: :user_circles
+  has_many :circles, through: :user_circles, dependent: :delete_all
 
   enum sex: {male: 0, female: 1, other: 2}
 
