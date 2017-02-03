@@ -1,0 +1,26 @@
+@import "common/fonts";
+@import "common/color";
+@import "common/media_queries";
+
+.Header__twitter {
+  width: 100%;
+  text-align: right;
+  a {
+    width: 100%;
+    height: 45px;
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    background-color: $white;
+    padding-right: 10px;
+    color: $blue;
+    line-height: 45px;
+    vertical-align: top;
+  }
+  i {
+    color: $blue;
+    padding-right: 8px;
+    position: relative;
+    top: 3px;
+  }
+}

@@ -13,6 +13,7 @@ for num in 1..500 do
       completed: num%3 == 1 ? true : false,
       faculty_id: faculty,
       department_id: Department.where(faculty_id: faculty).order("RAND()").first.id,
+      sex: num%7 == 1 ? 1 : 0,
       circle_ids: [1,3,4]
     )
   p "#{num}aa#{num}太郎"

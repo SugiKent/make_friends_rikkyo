@@ -18,7 +18,7 @@ gem 'seed-fu'
 gem 'pry'
 
 gem 'meta-tags'
-
+gem 'font-awesome-sass'
 gem 'google-analytics-rails'
 
 # bootstrap
