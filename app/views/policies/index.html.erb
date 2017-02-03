@@ -6,7 +6,6 @@
         <%= render :partial => "policy" %>
       </p>
     </div>
-    <!-- <a href = "avascript:window.close();" class = "btn btn-default">閉じる</a> -->
-    <input type="button" value="閉じる" onClick="window.close()" class = "btn btn-default">
+    <%= link_to "閉じる", root_path, class: "btn btn-default" %>
   </div>
 </div>
