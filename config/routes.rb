@@ -11,8 +11,7 @@ Rails.application.routes.draw do
 			get :thanks
 		end
 	end
->>>>>>> master
-
+	
 	namespace :admin do
 		resources :users, :except => [:show]
 		resources :faculties
