@@ -1,5 +1,7 @@
 <div class="Rikkyo__logo">
   <div class="Wrapper">
-    <%= render 'form'%>
+    <%= form_for(@user) do |f| %>
+      <%= render 'form'%>
+    <% end %>
   </div>
 </div>

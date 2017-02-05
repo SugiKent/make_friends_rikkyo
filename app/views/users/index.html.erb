@@ -3,25 +3,8 @@
 		<div class="Header__twitter">
 			<a href="https://twitter.com/intent/tweet?text=立教大学新入生のための特別なサービス『Halcala』でみんなも最高のスタートを！%20%20halcala.com" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i>Halcalaを友達に知らせよう！</a>
 		</div>
-    <% @users.each do |user| %>
-      <div class="User">
-        <div class="User__twitter">
-          <% if user.sex == "male" %>
-            <h2><%= link_to user.name, user_path(user), class: "User__twitter--male" %></h2>
-          <% elsif user.sex == "female" %>
-            <h2><%= link_to user.name, user_path(user), class: "User__twitter--female" %></h2>
-          <% else %>
-            <h2><%= link_to user.name, user_path(user) %></h2>
-          <% end %>
-        </div>
-        <div class="User__name">
-          <p>
-            <%= @departments.find(user.department_id).department_name %>
-          </p>
-        </div>
-      </div>
-    <% end %>
 
+      <%= render 'users' %>
 
     <div class="User__new-button">
       <% if logged_in? %>
