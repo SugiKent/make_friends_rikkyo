@@ -20,12 +20,17 @@ class UsersController < ApplicationController
   end
 
   def update
+    user_status = @user.completed #メールを送るかの判断フラグ
     if @user.update(user_params)
       @user.completed = true
       @user.save
       redirect_to users_path
     else
       redirect_to edit_user_path(@user)
+    end
+
+    if user_status != @user.completed
+      UserMailer.send_when_user_create(@user).deliver
     end
   end
 
