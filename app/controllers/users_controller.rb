@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @departments = Department.all
 		@users = User.completed.published.order("RAND()").limit(50)
-	end
+  end
 
   def show
     if User.exists?(params[:id])
@@ -47,7 +47,23 @@ class UsersController < ApplicationController
     @users_count = User.unpublished.count
   end
 
+  def search_form
+    @user = Search::User.new
+    # binding.pry
+  end
+
+  def search
+     @user = Search::User.new(search_params)
+     @users = @user.matches
+     @departments = Department.all
+   end
+
   private
+  def search_params
+  params
+    .require(:search_user)
+    .permit(Search::User::ATTRIBUTES)
+  end
 
   def check_user
     if "#{current_user.id}" == params[:id]
