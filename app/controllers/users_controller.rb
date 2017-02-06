@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @departments = Department.all
-		@users = User.completed.published.order("RAND()").limit(50)
+    @users = User.search(params[:user])
   end
 
   def show
@@ -48,15 +48,8 @@ class UsersController < ApplicationController
   end
 
   def search_form
-    @user = Search::User.new
-    # binding.pry
+    @user = User.new
   end
-
-  def search
-     @user = Search::User.new(search_params)
-     @users = @user.matches
-     @departments = Department.all
-   end
 
   private
   def search_params
