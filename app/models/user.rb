@@ -11,25 +11,24 @@ class User < ActiveRecord::Base
   scope :published,   -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
 
-  def self.get_by_faculty(faculty_id)
-    where(faculty_id: faculty_id)
+  #性別カラムの検索
+  def self.get_by_sex(a_value)
+    send(a_value.intern)
   end
 
-  def self.get_by_department(department_id)
-    where(department_id: department_id)
+  def self.get_by_id(a_hash)
+    where(a_hash)
   end
 
-  def self.search(params)
-    @users = User.completed.published.order("RAND()").all
-    if params != nil
-      if params[:faculty_id].present?
-        @users = @users.get_by_faculty(params[:faculty_id])
+  def self.search(params, users)
+      params.each do |key, value|
+        if value.present?
+          hash = {"#{key}": value}
+          users = users.get_by_id(hash) if key == "faculty_id" || "department_id"
+          # users = users.get_by_sex(value) if key == "sex"
+        end
       end
-      if params[:department_id].present?
-        @users = @users.get_by_department(params[:department_id])
-      end
-    end
-    return @users
+    return users
   end
 
   def self.find_or_create_from_auth(auth)
