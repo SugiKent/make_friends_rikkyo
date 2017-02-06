@@ -5,7 +5,10 @@ class UsersController < ApplicationController
 
   def index
     @departments = Department.all
-    @users = User.search(params[:user])
+    @users = User.completed.published.order("RAND()").limit(50)
+    if params[:user].present?
+      @users = User.search(search_params)
+    end
   end
 
   def show
@@ -72,5 +75,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :nickname, :department_id, :faculty_id, :sex, :want_friends, {:circle_ids => []})
   end
-
+  def search_params
+    params.require(:user).permit(:faculty_id, :department_id)
+  end
 end
