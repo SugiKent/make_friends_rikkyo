@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
+    @user = User.new
     @departments = Department.all
     @users = User.completed.published.order("RAND()")
     if params[:user].present?
@@ -49,10 +50,6 @@ class UsersController < ApplicationController
 
   def thanks
     @users_count = User.unpublished.count
-  end
-
-  def search_form
-    @user = User.new
   end
 
   private
