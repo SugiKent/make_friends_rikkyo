@@ -32,8 +32,8 @@
         <td>
           <%= link_to user.name, edit_admin_user_path(user), class: "link" %>
         </td>
-        <td>
-          <%= user.nickname %>
+				<td>
+					<a href="https://twitter.com/<%= user.nickname %>" target="_blank"><%= user.nickname %></a>
         </td>
         <td>
           <%= user.published %>
