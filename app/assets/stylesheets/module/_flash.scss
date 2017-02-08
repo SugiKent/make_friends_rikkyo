@@ -1,0 +1,12 @@
+@import "common/fonts";
+@import "common/color";
+@import "common/media_queries";
+
+.notice {
+  margin: 30px auto;
+  text-align: center;
+  background-color: rgba($blue, 0.8);
+  padding: 15px;
+  color: $white;
+  letter-spacing: 0.1em;
+}

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate, only: :index
   before_action :check_user, only: [:edit, :destroy]
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :completed?, only: [:index, :show]
 
   def index
     @user = User.new
@@ -82,4 +83,11 @@ class UsersController < ApplicationController
   def search_params
     params.require(:user).permit(:faculty_id, :department_id)
   end
+
+  def completed?
+    if current_user.completed == false
+      redirect_to edit_user_path(current_user), notice: "名前・性別・学部/学科を登録しないと利用できません。"
+    end
+  end
+
 end
