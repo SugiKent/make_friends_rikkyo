@@ -16,6 +16,6 @@
     <%= f.hidden_field :department_id %>
 
   <div class="Form__submit">
-    <%= f.submit "SEARCH", class: "Button Button__submit" %>
+    <%= f.submit "SEARCH", class: "Button Button__submit", data: { disable_with: 'Connecting...'} %>
   </div>
 <% end %>
