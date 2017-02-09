@@ -19,6 +19,9 @@
       border: none;
       outline: 1px solid $blue;
     }
+    &--text-area {
+      vertical-align: middle;
+    }
   }
   &__label {
     text-align: right;
@@ -39,6 +42,12 @@
         width: 90%;
       }
     }
+  }
+  &__help {
+    font-size: 12px;
+    text-align: center;
+    width: 40%;
+    margin: 5px auto;
   }
   &__select-box {
     width: 280px;

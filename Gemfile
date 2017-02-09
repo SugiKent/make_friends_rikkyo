@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'seed-fu'
 
 gem 'pry'
+gem 'pry-byebug', group: :development
 
 gem 'meta-tags'
 gem 'font-awesome-sass'
