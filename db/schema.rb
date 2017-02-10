@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209113206) do
+ActiveRecord::Schema.define(version: 20170210042127) do
 
   create_table "circles", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20170209113206) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  create_table "topic_contents", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "topic_id",   limit: 4
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "topic_contents", ["topic_id"], name: "index_topic_contents_on_topic_id", using: :btree
+  add_index "topic_contents", ["user_id"], name: "index_topic_contents_on_user_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -77,6 +88,8 @@ ActiveRecord::Schema.define(version: 20170209113206) do
   add_index "users", ["faculty_id"], name: "index_users_on_faculty_id", using: :btree
 
   add_foreign_key "departments", "faculties"
+  add_foreign_key "topic_contents", "topics"
+  add_foreign_key "topic_contents", "users"
   add_foreign_key "topics", "users"
   add_foreign_key "user_circles", "circles"
   add_foreign_key "user_circles", "users"
