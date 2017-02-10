@@ -1,0 +1,9 @@
+<% @topics.each do |topic| %>
+  <div class="Topic__board">
+    <ul>
+      <li><%= topic.title %></li>
+      <li><%= topic.description %></li>
+      <li>最終更新：<%= topic.updated_at.mon %>月<%= topic.updated_at.day %>日<%= topic.updated_at.hour %>時</li>
+    </ul>
+  </div>
+<% end %>
