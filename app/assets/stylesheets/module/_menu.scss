@@ -14,12 +14,13 @@
     width: 300px;
     margin: 150px auto 0px;
     li {
-      padding: 10px 0px;
+      padding: 20px 0px;
     }
   }
   &__item {
     color: $white;
     font-size: 20px;
+    padding-left: 15px;
     letter-spacing: 0.2em;
     border-bottom: 1px dotted $blue;
     font-family: 'Orbitron', cursive;
