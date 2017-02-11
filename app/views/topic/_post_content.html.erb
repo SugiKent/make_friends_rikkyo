@@ -1,6 +1,16 @@
-<% @topic.posts.each do |post| %>
-<div class="">
-  <%= post.user.name %>
-  <%= post.content %>  
-</div>
+<% @topic.posts.each_with_index do |post, i| %>
+  <div class="Post__content">
+    <p class="Post__name">
+      <%= i+1 %>:
+      <% if post.user.sex == "male" %>
+        <%= link_to post.user.name, user_path(post.user), class: "Post__name--male" %>
+      <% elsif post.user.sex == "female" %>
+        <%= link_to post.user.name, user_path(post.user), class: "Post__name--female" %>
+      <% else %>
+        <%= link_to post.user.name, user_path(post.user), class: "Post__name--other" %>
+      <% end %>
+      <span class="Post__time"><%= post.created_at.to_s %></span>
+    </p>
+    <%= simple_format(h(post.content), class: "Post__text") %>
+  </div>
 <% end %>
