@@ -1,9 +1,9 @@
-class CreateTopicContents < ActiveRecord::Migration
+class CreatePosts < ActiveRecord::Migration
   def change
-    create_table :topic_contents do |t|
+    create_table :posts do |t|
+      t.text :content
       t.references :user, index: true, foreign_key: true
       t.references :topic, index: true, foreign_key: true
-      t.text :content
 
       t.timestamps null: false
     end

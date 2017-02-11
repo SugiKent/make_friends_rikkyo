@@ -1,2 +1,20 @@
-<h1>Topic#show</h1>
-<p>Find me in app/views/topic/show.html.erb</p>
+<div class="Rikkyo__logo">
+  <div class="Wrapper">
+
+    <div class="Post__contents">
+      <%= render partial: 'topic/post_content' %>
+    </div>
+
+    <%= form_for(@new_post, url: {controller: 'posts', action: 'create'}, remote: true) do |f| %>
+      <%= f.text_field :content, id: "content_field", class: "Form__text-box Form__item" %>
+      <%= f.hidden_field :topic_id, value: params[:id] %>
+      <div class="Form__submit">
+        <%= f.submit "POST", class: "Button Button__submit", data: { disable_with: 'Connecting...' } %>
+      </div>
+    <% end %>
+
+    <div class="Next">
+      <%= link_to "BACK", topic_index_path, class: "Next__button Next__button--back" %>
+    </div>
+  </div>
+</div>
