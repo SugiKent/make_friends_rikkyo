@@ -1,7 +1,21 @@
+
 <div class="User__new-button">
-  <% if logged_in? %>
-    <%= link_to 'PROFILE', edit_user_path(current_user), class: "Button Button__new" %>
-  <% else %>
-    <%= link_to "ENTRY", 'auth/twitter', class: "Button Button__new" %>
-  <% end %>
+  <p class="Button Button__menu">
+    MENU
+  </p>
+</div>
+<div class="Menu">
+  <div class="User__new-button">
+    <p class="Button Button__menu">
+      CLOSE
+    </p>
+  </div>
+  <ul class="Menu__list">
+    <li><%= link_to "TOP", users_path, class: "Menu__item" %></li>
+    <li><%= link_to 'プロフィール', edit_user_path(current_user), class: "Menu__item" %></li>
+    <li><%= link_to "掲示板一覧", topic_index_path, class: "Menu__item" %></li>
+    <% department = Department.find( current_user.department_id ).department_name %>
+    <li><%= link_to "#{department}の掲示板", topic_path( Topic.where(belong_type: "department", belong_id: current_user.department_id ).first ), class: "Menu__item" %></li>
+  </ul>
+
 </div>

@@ -5,11 +5,11 @@
   height: 40px;
   line-height: 40px;
   border: 1px solid $blue;
-  &__new {
+  &__menu {
     margin: 10px auto;
     color: $white;
     font-size: 15px;
-    padding: 10px 60px;
+    padding: 0px 60px;
     transition: 0.5s;
     text-decoration: none;
     font-family: 'Orbitron', cursive;
@@ -17,6 +17,7 @@
       text-decoration: none;
       background-color: $white;
       color: $black;
+      cursor: pointer;
     }
   }
   &__submit {
