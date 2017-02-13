@@ -6,6 +6,7 @@ class TopicController < ApplicationController
   end
 
   def show
+    @new_post = Post.new(user_id: current_user.id, topic_id: params[:id])
   end
 
   def new
