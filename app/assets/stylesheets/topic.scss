@@ -37,7 +37,45 @@ body {
 }
 
 .Topic {
-  width: 100%;
+  width: $breakpoint-tablet;
+  text-align: center;
   margin: 60px auto;
   overflow: hidden;
+  @include max-screen($breakpoint-tablet) {
+    width: $breakpoint-mobile;
+    text-align: center;
+    overflow: hidden;
+  }
+  @include max-screen($breakpoint-mobile) {
+    width: 100%;
+    text-align: center;
+    margin: 60px auto;
+    overflow: hidden;
+  }
+  &__board{
+    width: 250px;
+    float: left;
+    height: 300px;
+    margin-left: 15px;
+    text-align: center;
+    @include max-screen($breakpoint-tablet) {
+      width: 40%;
+      height: 300px;
+      margin-left: ();
+      text-align: center;
+    }
+    @include max-screen($breakpoint-mobile) {
+      width: 100%;    height: 300px;
+      margin-left: 15px;
+      text-align: center;
+    }
+    &__img{
+      width: 100%;
+      height: 150px;
+      background-color: $gray;
+    }
+    &__li{
+      list-style: none;
+    }
+  }
 }
