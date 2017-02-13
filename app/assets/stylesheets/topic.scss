@@ -4,37 +4,6 @@
 @import "common/fonts";
 @import "common/color";
 @import "common/media_queries";
-@import "module/button";
-@import "module/form";
-
-* {
-  margin: 0px;
-  padding: 0px;
-  color: $white;
-  font-family: $apple;
-}
-html {
-  overflow: auto;
-  height: 100%;
-}
-body {
-  background-color: $black;
-}
-
-.Rikkyo__logo {
-  background-image: image-url('bg_rikkyo_logo.png');
-  background-size: 400px 400px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.Wrapper {
-  width: 100%;
-  margin: 0px auto;
-  background-color: $opacity-black;
-  position: relative;
-  top: 0px;
-}
 
 .Topic {
   width: $breakpoint-tablet;
@@ -45,12 +14,11 @@ body {
     width: $breakpoint-mobile;
     text-align: center;
     overflow: hidden;
+    padding: 0px 20px;
   }
   @include max-screen($breakpoint-mobile) {
     width: 100%;
-    text-align: center;
-    margin: 60px auto;
-    overflow: hidden;
+    padding: 0px 30px;
   }
   &__board{
     width: 250px;
@@ -60,18 +28,16 @@ body {
     text-align: center;
     @include max-screen($breakpoint-tablet) {
       width: 40%;
-      height: 300px;
-      margin-left: ();
-      text-align: center;
+      margin-left: 35px;
     }
     @include max-screen($breakpoint-mobile) {
-      width: 100%;    height: 300px;
+      width: 90%;
+      height: 300px;
       margin-left: 15px;
-      text-align: center;
     }
     &__img{
       width: 100%;
-      height: 150px;
+      height: 170px;
       background-color: $gray;
     }
     &__li{
