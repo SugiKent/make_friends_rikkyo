@@ -6,7 +6,6 @@
 
 .Rikkyo__background {
   width: 100%;
-  height: 100vh;
   background-image: image-url('bg_rikkyo_build.jpg');
   background-position: center;
   background-size: cover;
@@ -16,6 +15,7 @@
 
 .Top {
   width: 100%;
+  height: 90vh;
   position: relative;
   top: 100px;
   padding-left: 150px;
@@ -65,5 +65,111 @@
     margin: 20px auto;
     font-size: 14px;
     line-height: 30px;
+  }
+  &__section {
+    width: 100%;
+    padding: 100px 0px;
+    &--why {
+      background-color: rgba($black, 0.6);
+    }
+    &--what {
+      background-color: rgba($white, 0.3);
+    }
+  }
+}
+
+.Section {
+  width: 80%;
+  margin: auto;
+  @include max-screen($breakpoint-mobile) {
+    width: 95%;
+    margin: auto;
+  }
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    color: $orange;
+    letter-spacing: 0.2em;
+    &--white-back {
+      color: darken($orange, 5%);
+    }
+  }
+  &__description {
+    font-size: 18px;
+    text-align: center;
+    margin: 30px auto 100px;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+    @include max-screen($breakpoint-mobile) {
+      font-size: 14px;
+      margin: 30px auto;
+    }
+  }
+  &__img {
+    padding: 7px;
+    border: 1px solid $blue;
+    width: 300px;
+  }
+  &__right {
+    margin: 30px auto;
+    line-height: 35px;
+    text-align: left;
+    @include max-screen($breakpoint-mobile) {
+      margin-top: 18px;
+      line-height: 35px;
+      text-align: center;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 40px;
+      margin-bottom: 30px;
+      color: $blue;
+      @include max-screen($breakpoint-mobile) {
+        margin-bottom: 18px;
+      }
+    }
+    h4 {
+      color: $orange;
+      margin-top: 30px;
+      font-size: 20px;
+      line-height: 40px;
+      @include max-screen($breakpoint-mobile) {
+        margin-top: 18px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.What {
+  &__title {
+    font-size: 18px;
+    color: $blue;
+    letter-spacing: 0.2em;
+    font-family: 'Orbitron', cursive;
+    @include max-screen($breakpoint-mobile) {
+      margin-top: 30px;
+    }
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 10px;
+    @include max-screen($breakpoint-mobile) {
+      text-align: center;
+    }
+  }
+}
+
+.About {
+  &__img {
+    width: 250px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
   }
 }
