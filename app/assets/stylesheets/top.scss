@@ -11,6 +11,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  @include max-screen($breakpoint-mobile) {
+    background-image: none;
+  }
   &--wrapper {
     @include max-screen($breakpoint-mobile) {
       &::before {
@@ -22,9 +25,12 @@
         z-index:-1;
         width:100%;
         height:100vh;
+        background-position: center;
+        background-size: auto;
+        background-image: image-url('bg_rikkyo_build.jpg');
         -webkit-background-size:cover;/*Android4*/
       }
-    }    
+    }
   }
 }
 
