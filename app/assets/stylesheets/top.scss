@@ -87,6 +87,10 @@
     font-size: 14px;
     line-height: 30px;
   }
+  &__down {
+    position: relative;
+    bottom: 30px;
+  }
   &__section {
     width: 100%;
     padding: 100px 0px;
