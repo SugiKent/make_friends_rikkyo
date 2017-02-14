@@ -6,10 +6,10 @@
 @import "common/media_queries";
 
 .Topic {
-  width: $breakpoint-tablet;
-  text-align: center;
+  width: 100%;
   margin: 60px auto;
   overflow: hidden;
+<<<<<<< HEAD
   @include max-screen($breakpoint-tablet) {
     width: $breakpoint-mobile;
     text-align: center;
@@ -44,4 +44,6 @@
       list-style: none;
     }
   }
+=======
+>>>>>>> parent of 402042b... refs #75 viewの更新
 }
