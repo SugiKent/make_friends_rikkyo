@@ -55,57 +55,27 @@ body {
   &__board{
     width: 250px;
     float: left;
+    height: 300px;
     margin-left: 15px;
-    margin-top: 30px;
     text-align: center;
-    // border: solid 0.5px rgba(255, 255, 255, .5);
-    border-radius: 10px;
     @include max-screen($breakpoint-tablet) {
       width: 40%;
       height: 300px;
       margin-left: 30px;
+      text-align: center;
     }
     @include max-screen($breakpoint-mobile) {
-      width: 80%;
-      height: 300px;
-      margin-left: 10%;
+      width: 100%;    height: 300px;
+      margin-left: 15px;
+      text-align: center;
     }
     &__img{
       width: 100%;
       height: 150px;
-      text-align: center;
-      padding-top: 20%;
-      font-size: 25px;
-      font-family: 'Orbitron', cursive;
-    }
-    &__ul{
-      list-style: none;
+      background-color: $gray;
     }
     &__li{
-      &--first{
-        list-style: none;
-        margin-top: 30px;
-      }
-      &--title{
-         background-color: rgba($white, 0.2);
-         color: $blue;
-         height: 50px;
-         padding-top: 20px;
-         border-bottom: $black;
-         border-radius: 10px 10px 0px 0px;
-      }
-      &--count{
-        background-color: rgba($white, 0.2);
-        border-bottom: $black;
-         color: $orange;
-      }
-      &--description{
-        background-color: rgba($white, 0.2);
-        color: $white;
-        height: 300px - 70px;
-        border-radius: 0px 0px 10px 10px ;
-　　　　　vertical-align: middle;
-      }
+      list-style: none;
     }
   }
    &__header {

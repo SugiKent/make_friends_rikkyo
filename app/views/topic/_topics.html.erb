@@ -1,12 +1,13 @@
 <div class="Topic">
   <% @topics.each do |topic| %>
-    <div class="Topic__board">
-      <ul class="Topic__board__ul">
-        <div class="Topic__board__img"></div>
-        <li class="Topic__board__li"><%= topic.title %></li>
-        <li class="Topic__board__li"><%= topic.description %></li>
-        <li class="Topic__board__li">最終更新：<%= topic.updated_at.mon %>月<%= topic.updated_at.day %>日<%= topic.updated_at.hour %>時</li>
-      </ul>
-    </div>
+    <%= link_to topic_path(topic) do %>
+      <div class="Topic__board">
+        <ul class="Topic__board__ul">
+          <li class="Topic__board__li--title"><%= topic.title %></li>
+          <li class="Topic__board__li--count"><%= topic.posts.count %> POST</li>
+          <li class="Topic__board__li--description"><%= topic.description %></li>
+        </ul>
+      </div>
+    <% end%>
   <% end %>
 </div>
