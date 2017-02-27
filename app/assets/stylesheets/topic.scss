@@ -62,21 +62,11 @@ body {
     border-radius: 10px;
     @include max-screen($breakpoint-tablet) {
       width: 40%;
-      height: 300px;
       margin-left: 30px;
     }
     @include max-screen($breakpoint-mobile) {
       width: 80%;
-      height: 300px;
       margin-left: 10%;
-    }
-    &__img{
-      width: 100%;
-      height: 150px;
-      text-align: center;
-      padding-top: 20%;
-      font-size: 25px;
-      font-family: 'Orbitron', cursive;
     }
     &__ul{
       list-style: none;
@@ -87,24 +77,70 @@ body {
         margin-top: 30px;
       }
       &--title{
-         background-color: rgba($white, 0.2);
-         color: $blue;
-         height: 50px;
-         padding-top: 20px;
+         background-color: rgba($white, 0.1);
+         min-height: 50px;
+         padding: 15px 10px 5px 10px;
          border-bottom: $black;
          border-radius: 10px 10px 0px 0px;
-      }
-      &--count{
-        background-color: rgba($white, 0.2);
-        border-bottom: $black;
-         color: $orange;
+         &--left{
+           border-radius: 50%;
+           background: #fff;
+           color: #888;
+           padding: 5px;
+           font-size: 10px;
+           float: left;
+           min-width: 24px;
+           @include max-screen($breakpoint-tablet) {
+           }
+           @include max-screen($breakpoint-mobile) {
+             font-size: 14px;
+             min-width: 30px;
+           }
+         }
+         &--right{
+           color: $blue;
+           @include max-screen($breakpoint-tablet) {
+             font-size: 15px;
+           }
+           @include max-screen($breakpoint-mobile) {
+             font-size: 17px;
+           }
+         }
       }
       &--description{
-        background-color: rgba($white, 0.2);
+        background-color: rgba($white, 0.1);
         color: $white;
-        height: 300px - 70px;
+        min-height: 130px;
+        text-align: left;
         border-radius: 0px 0px 10px 10px ;
-        padding: 10px 15px;
+        padding: 5px 10px 15px 10px;
+        @include max-screen($breakpoint-tablet) {
+          font-size: 13px;
+
+        }
+        @include max-screen($breakpoint-mobile) {
+          font-size: 13px;
+        }
+        &--btn{
+          width: 55px;
+          border-bottom: solid #fff 0.5px;
+          text-align: center;
+          position: relative;
+          margin: 0 auto;
+          margin-top: 30px;
+          font-size: 15px;
+          a{
+            color: white;
+          }
+          :hover{
+            color: $blue;
+          }
+          @include max-screen($breakpoint-tablet) {
+
+          }
+          @include max-screen($breakpoint-mobile) {
+          }
+        }
       }
     }
   }
