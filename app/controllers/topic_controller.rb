@@ -2,7 +2,7 @@ class TopicController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
-    @topics = Topic.all
+    @topics = Topic.without_department.all
   end
 
   def show
@@ -18,6 +18,10 @@ class TopicController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
+
+    if @topic.belong_id.present?
+      @topic.belong_type = "circle"
+    end
 
     respond_to do |format|
       if @topic.save
@@ -57,6 +61,6 @@ class TopicController < ApplicationController
     end
 
     def topic_params
-      params.require(:topic).permit(:title, :description)
+      params.require(:topic).permit(:title, :description, :belong_id, :belong_type, :user_id)
     end
 end
