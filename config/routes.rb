@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 		resources :faculties
 		resources :departments
     resources :circles
+    resources :topics
   end
 
 end

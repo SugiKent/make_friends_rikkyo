@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-8 col-xs-12 col-sm-offset-2">
+    <table class="table table-striped Admin__table">
+      <tr>
+        <th>
+          タイトル
+        </th>
+        <th>
+          説明文
+        </th>
+        <th>
+          リンク
+        </th>
+      </tr>
+      <% @topics.each do |topic| %>
+      <tr>
+        <td>
+          <%= topic.title %>
+        </td>
+        <td>
+          <%= topic.description %>
+        </td>
+        <td>
+          <%= link_to "編集", edit_admin_topic_path(topic), class: "btn btn-success"%>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
