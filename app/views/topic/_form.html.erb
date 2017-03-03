@@ -24,13 +24,14 @@
         Sport
       </p>
       <div class="Check__group">
-        <%= f.collection_select(
+        <%= collection_select(
+              :topic,
               :belong_id,
               Circle.where(category: 0),
               :id,
               :name,
               { include_blank: "No Selected" },
-              { class: "Form__select-box Form__item for_hidden" }
+              { class: "Form__select-box Form__item Form__item--circle" }
         ) %>
       </div>
     </div>
@@ -39,15 +40,20 @@
         Culture
       </p>
       <div class="Check__group">
-        <%= f.collection_select(
+        <%= collection_select(
+              :topic,
               :belong_id,
               Circle.where(category: 1),
               :id,
               :name,
               { include_blank: "No Selected" },
-              { class: "Form__select-box Form__item for_hidden" }
+              { class: "Form__select-box Form__item Form__item--circle" }
         ) %>
       </div>
+    </div>
+
+    <div class="Form__hidden">
+      <%= f.hidden_field :belong_id, class: "Form__hidden--circle" %>
     </div>
   </div>
 
