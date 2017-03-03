@@ -5,9 +5,7 @@ namespace :topic do
     FIRST_POST = "こんにちは！この掲示板では自己紹介や学科生同士の連絡などをしてみてください！この掲示板は同じ学科生にしか見られません〜"
     SECOND_POST = "学科の枠を超えてお話をしたいひとは、掲示板一覧から掲示板を自由に作れます！気になるサークルとか入学前のコミュニケーションに活用してください！"
     THIRD_POST = "それでは、みなさん自由にお話をしましょう！"
-
-    binding.pry
-
+    
     departments = Department.all
     departments.each do |d|
       description = "#{d.department_name}の掲示板です！みなさん自己紹介や一緒のサークル仲間などを見つけましょう！"
