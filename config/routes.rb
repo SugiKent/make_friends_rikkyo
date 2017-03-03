@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'post/create'
+
   root 'home#top'
 	get 'auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
 			get :departments_select
 		end
 	end
+  resources :topic
+  resources :posts
 
 	namespace :admin do
 		resources :users, :except => [:show]

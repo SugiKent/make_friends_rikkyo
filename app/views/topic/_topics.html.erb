@@ -1,0 +1,25 @@
+<div class="Topic">
+  <div class="Topic__new">
+    <%= link_to "掲示板を作る", new_topic_path, class: "Button Button__new" %>
+    <p class="Topic__new--help">
+      簡単10秒で誰でも自由に作れます！
+    </p>
+  </div>
+
+  <% @topics.each do |topic| %>
+    <%= link_to topic_path(topic) do %>
+      <div class="Topic__board">
+        <ul class="Topic__board__ul">
+          <li class="Topic__board__li--title">
+            <span class = "Topic__board__li--title--left"><%= topic.posts.count %></span>
+            <span class = "Topic__board__li--title--right"><%= topic.title %></span>
+          </li>
+          <li class="Topic__board__li--description">
+            <span class = "Topic__board__li--desxription--text"><%= topic.description %></span>
+            <p class = "Topic__board__li--description--btn">OPEN</p>
+          </li>
+        </ul>
+      </div>
+    <% end%>
+  <% end %>
+</div>

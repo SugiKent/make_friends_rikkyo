@@ -1,0 +1,28 @@
+<div class="Topic__header">
+  <h3>
+    <%= @topic.title %>
+  </h3>
+  <p>
+    <%= @topic.description %>
+  </p>
+</div>
+
+<div class="Post__contents">
+  <%= render partial: 'topic/post_content' %>
+</div>
+
+<div class="">
+  <%= form_for(@new_post, url: {controller: 'posts', action: 'create'}, remote: true) do |f| %>
+  <div class="Form__group--post">
+    <%= f.text_area :content, id: "content_field", class: "Form__text-box Form__item Form__text-box--post" %>
+  </div>
+    <%= f.hidden_field :topic_id, value: params[:id] %>
+    <div class="Form__submit">
+      <%= f.submit "POST", class: "Button Button__submit", data: { disable_with: 'Connecting...' } %>
+    </div>
+  <% end %>
+</div>
+
+<div class="Next">
+  <%= link_to "BACK", topic_index_path, class: "Next__button Next__button--back" %>
+</div>
