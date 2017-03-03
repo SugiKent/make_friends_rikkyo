@@ -10,7 +10,7 @@ class TopicController < ApplicationController
   end
 
   def new
-    @topic = Topic.new(user_id: current_user.id)
+    @topic = Topic.new()
   end
 
   def edit
@@ -22,6 +22,8 @@ class TopicController < ApplicationController
     if @topic.belong_id.present?
       @topic.belong_type = "circle"
     end
+
+    @topic.user_id = current_user.id
 
     respond_to do |format|
       if @topic.save

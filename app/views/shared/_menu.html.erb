@@ -14,8 +14,10 @@
     <li><i class="fa fa-2x fa-home" aria-hidden="true"></i><%= link_to "HOME", users_path, class: "Menu__item" %></li>
     <li><i class="fa fa-2x fa-user" aria-hidden="true"></i><%= link_to 'プロフィール', edit_user_path(current_user), class: "Menu__item" %></li>
     <li><i class="fa fa-2x fa-comments-o" aria-hidden="true"></i><%= link_to "掲示板一覧", topic_index_path, class: "Menu__item" %></li>
-    <% department = Department.find( current_user.department_id ).department_name %>
-    <li><i class="fa fa-2x fa-coffee" aria-hidden="true"></i><%= link_to "#{department}の掲示板", topic_path( Topic.where(belong_type: "department", belong_id: current_user.department_id ).first ), class: "Menu__item" %></li>
+    <% if current_user.department_id.present? %>
+      <% department = Department.find( current_user.department_id ).department_name %>
+      <li><i class="fa fa-2x fa-coffee" aria-hidden="true"></i><%= link_to "#{department}の掲示板", topic_path( Topic.where(belong_type: "department", belong_id: current_user.department_id ).first ), class: "Menu__item" %></li>
+    <% end %>
   </ul>
 
 </div>
