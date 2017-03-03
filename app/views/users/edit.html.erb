@@ -1,16 +1,12 @@
-<div class="Rikkyo__logo">
-  <div class="Wrapper">
-    <%= render 'form'%>
-    <div class="Next">
-      <%= link_to "HOME", users_path, class: "Next__button Next__button--back" %>
-    </div>
-    <div class="Next">
-      <%= link_to "LOGOUT", logout_path, class: "Next__button Next__button--logout" %>
-      <% if  current_user.completed %>
-        　/　<%= link_to "DELETE", user_path, method: :delete, data: { confirm: '本当にアカウントを削除しますか？' }, class: "Next__button Next__button--logout" %>
-      <% end %>
-    </div>
-  </div>
+<%= render 'form'%>
+<div class="Next">
+  <%= link_to "HOME", users_path, class: "Next__button Next__button--back" %>
+</div>
+<div class="Next">
+  <%= link_to "LOGOUT", logout_path, class: "Next__button Next__button--logout" %>
+  <% if  current_user.completed %>
+    　/　<%= link_to "DELETE", user_path, method: :delete, data: { confirm: '本当にアカウントを削除しますか？' }, class: "Next__button Next__button--logout" %>
+  <% end %>
 </div>
 <div>
 </div>

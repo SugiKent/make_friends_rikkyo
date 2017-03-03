@@ -1,0 +1,158 @@
+// Place all the styles related to the Topic controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common/fonts";
+@import "common/color";
+@import "common/media_queries";
+@import "module/button";
+@import "module/form";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: $white;
+  font-family: $apple;
+}
+html {
+  overflow: auto;
+  height: 100%;
+}
+body {
+  background-color: $black;
+}
+
+.Rikkyo__logo {
+  background-image: image-url('bg_rikkyo_logo.png');
+  background-size: 400px 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.Wrapper {
+  width: 100%;
+  margin: 0px auto;
+  background-color: $opacity-black;
+  position: relative;
+  top: 0px;
+}
+
+.Topic {
+  width: $breakpoint-tablet;
+  text-align: center;
+  margin: 60px auto;
+  overflow: hidden;
+  @include max-screen($breakpoint-tablet) {
+    width: $breakpoint-mobile;
+    text-align: center;
+    overflow: hidden;
+  }
+  @include max-screen($breakpoint-mobile) {
+    width: 100%;
+    text-align: center;
+    margin: 60px auto;
+    overflow: hidden;
+  }
+  &__board{
+    width: 250px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 30px;
+    text-align: center;
+    // border: solid 0.5px rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    @include max-screen($breakpoint-tablet) {
+      width: 40%;
+      margin-left: 30px;
+    }
+    @include max-screen($breakpoint-mobile) {
+      width: 80%;
+      margin-left: 10%;
+    }
+    &__ul{
+      list-style: none;
+    }
+    &__li{
+      &--first{
+        list-style: none;
+        margin-top: 30px;
+      }
+      &--title{
+         background-color: rgba($white, 0.1);
+         min-height: 50px;
+         padding: 15px 10px 5px 10px;
+         border-bottom: $black;
+         border-radius: 10px 10px 0px 0px;
+         &--left{
+           border-radius: 50%;
+           background: #fff;
+           color: #888;
+           padding: 5px;
+           font-size: 10px;
+           float: left;
+           min-width: 24px;
+           @include max-screen($breakpoint-tablet) {
+           }
+           @include max-screen($breakpoint-mobile) {
+             font-size: 14px;
+             min-width: 30px;
+           }
+         }
+         &--right{
+           color: $blue;
+           @include max-screen($breakpoint-tablet) {
+             font-size: 15px;
+           }
+           @include max-screen($breakpoint-mobile) {
+             font-size: 17px;
+           }
+         }
+      }
+      &--description{
+        background-color: rgba($white, 0.1);
+        color: $white;
+        min-height: 130px;
+        text-align: left;
+        border-radius: 0px 0px 10px 10px ;
+        padding: 5px 10px 15px 10px;
+        @include max-screen($breakpoint-tablet) {
+          font-size: 13px;
+
+        }
+        @include max-screen($breakpoint-mobile) {
+          font-size: 13px;
+        }
+        &--btn{
+          width: 55px;
+          border-bottom: solid #fff 0.5px;
+          text-align: center;
+          position: relative;
+          margin: 0 auto;
+          margin-top: 30px;
+          font-size: 15px;
+          a{
+            color: white;
+          }
+          :hover{
+            color: $blue;
+          }
+          @include max-screen($breakpoint-tablet) {
+
+          }
+          @include max-screen($breakpoint-mobile) {
+          }
+        }
+      }
+    }
+  }
+   &__header {
+     width: 70%;
+     margin: 50px auto;
+     @include max-screen($breakpoint-mobile) {
+       width: 95%;
+       margin: 70px auto 30px;
+     }
+     h3 {
+       letter-spacing: 0.1em;
+     }
+   }
+}
