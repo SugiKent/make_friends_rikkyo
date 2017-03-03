@@ -58,6 +58,10 @@ body {
     @include max-screen($breakpoint-mobile) {
       width: 80%;
     }
+    &--help {
+      margin-top: 10px;
+      letter-spacing: 0.1em;
+    }
   }
   &__board{
     width: 250px;
