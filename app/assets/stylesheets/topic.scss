@@ -52,6 +52,13 @@ body {
     margin: 60px auto;
     overflow: hidden;
   }
+  &__new {
+    width: 500px;
+    margin: 30px auto;
+    @include max-screen($breakpoint-mobile) {
+      width: 80%;
+    }
+  }
   &__board{
     width: 250px;
     float: left;
